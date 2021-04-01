@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FARM-MART</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" href="./stylesheets/style.css">
+
+</head>
+<body>
+<title>FARM-MART</title>
+<link rel="shortcut icon" href="images/logo.svg">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fredoka+One&family=Kanit:wght@300&display=swap" rel="stylesheet">  
+</head>
+<body>
+
+<!--NAV-BAR-->
+
+<nav class="topnav navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid ms-5">
+    <a class="navbar-brand logo nav-head" href="/">FARM-MART</a>
+    <button class="navbar-toggler" type="button" style="background-color: black;" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto d-flex flex-row" style="transition: none;">
+            <div class="d-flex flex-row mt-1">
+              <% if(currentUser) {%> 
+                <a class="nav-link px-3" href="/user/<%=currentUser._id%>/profile">Profile</a>
+                <% } %> 
+            <a class="nav-link px-3" href="/products">Grocery Menu</a>
+          
+            <a class="nav-link px-3" href="/blog">Blog</a>
+            <a class="nav-link px-3" href="/contact">Contact us</a>
+         
+          </div>
+            <% if(currentUser){ %> 
+              <a class="nav-link px-3 mt-1" href="/logout">Logout</a>
+              <div class="d-flex flex-row">
+                <div>
+                <a class="nav-link px-3" href="/cart"><i class="fa fa-2x fa-shopping-bag"></i></a>
+              </div>
+              
+              </div>
+           
+            <% } else { %>
+              <div class="mt-1">
+              <a class="nav-link px-3" href="/login">Login</a>
+            </div>
+              
+              <% } %>
+             
+          </div>
+      </div>
+  </div>
+</nav>
+
+
+<div class="main">
+
+<section>
+<h1 class="title ml9">
+<span class="text-wrapper">
+<span class="letters">FRESH GROCERY SHOPPING</span>
+</span>
+</h1>
+<h5 class="sub-title">Connects Mumbai with organic farmers across Maharashtra! <br>You will now be able to buy fresh, organically certified,<br>fruits and vegetables directly from farmers.</h5>
+<br>
+<a href="/products" class="btn1">BROWSE NOW</a>
+</section>
+</div>
+
+
+<section class="section0">
+  <div class="d-flex flex-row">
+
+<div class="card inline-photo show-on-scroll d-flex flex-row">
+<div>
+<i class="fa fa-leaf"></i>
+</div>
+<div>
+<h2 class="title">Balanced Diet</h2>
+<span class="sub-title">Order fresh vegetables,<br>maintain a balanced diet!</span> 
+</div>
+</div>
+
+<div class="card inline-photo show-on-scroll d-flex flex-row">
+  <div>
+  <i class="fa fa-shopping-cart"></i>
+  </div>
+  <div>
+<h2 class="title">Doorstep delivery</h2>
+ <span class="sub-title">Get fresh grocceries at your doorstep!</span>
+</div>
+</div>
+
+
+<div class="card inline-photo show-on-scroll d-flex flex-row">
+  <div>
+<i class="fa fa-tag"></i>
+</div>
+<div>
+<h2 class="title">Price guarantee</h2>
+ <span class="sub-title">Flexible plans,huge discounts,great savings!</span> 
+</div>
+</div>
+
+<div class="card inline-photo show-on-scroll d-flex flex-row">
+<div><i class="fa fa-line-chart"></i></div>
+<div>
+<h2 class="title">Discover new</h2>
+ <span class="sub-title">Easy to make, delicious receipes at your finger tips!</span> 
+</div>
+</div>
+</section>
+
+
+
+<section class="section3">
+<div class="section3-div">
+<div class="card inline-photo show-on-scroll">
+<div class="card_part card_part-one"></div>
+<div class="card_part card_part-two"></div>
+<div class="card_part card_part-three"></div>
+<div class="card_part card_part-four"></div>
+</div>
+<div class="section3-div2">
+<h1 class="title">How to order?</h1>
+<br>
+<br>
+<ol>
+<li style="font-size: larger;">Browse through the products list.</li>
+<li style="font-size: larger;">Select the product and add it to cart.</li>
+<li style="font-size: larger;">Order online, zero contact.</li>
+<li style="font-size: larger;">Leave a review for the products bought.</li>
+</ol>
+</div>
+</div>
+</section>
+
+<section class="slick">
+<div class="banner">
+<span class="title">Our Products </span>
+<span class="sub-title" style="display:block;">Variety of groceries at your doorstep</span>
+</div>
+<table>
+<tr>
+<td>
+<ul>
+<li class="inline-photo2 show-on-scroll2">
+<h3>ORANGES</h3>
+<p>Price: &#8377 70 /kg</p>
+<a href="/products" class="btn2">View Details</a>
+</li>
+<li class="inline-photo2 show-on-scroll2">
+<h3>CHILLI</h3>
+<p>Price: &#8377 110 /kg </p>
+<a href="/products" class="btn2">View Details</a>
+</li>
+<li class="inline-photo2 show-on-scroll2">
+<h3>EDIBLE OIL</h3>
+<p>Price: &#8377 180 /litre </p>
+<a href="/products" class="btn2">View Details</a>
+</li>
+</ul>
+</td>
+<td>
+<div class="card inline-photo show-on-scroll">
+<div class="card_part card_part-one"></div>
+<div class="card_part card_part-two"></div>
+<!-- Photo 3 -->
+<div class="card_part card_part-three"></div>
+<!-- Photo 4 -->
+<div class="card_part card_part-four"></div>
+</div>
+</td>
+<td>
+<ul>
+<!--DETAIL_1-->
+<li class="inline-photo3 show-on-scroll3">
+<h3>EGG PLANT</h3>
+<p>Price: &#8377 90 /kg</p>
+<a href="/products" class="btn2">View Details</a>
+</li>
+<!--DETAIL_2-->
+<li class="inline-photo3 show-on-scroll3">
+<h3>CHEESE</h3>
+<p>Price: &#8377 160 /kg </p>
+<a href="/products" class="btn2">View Details</a>
+</li>
+<!--DETAIL_3-->
+<li class="inline-photo3 show-on-scroll3">
+<h3>WHEAT</h3>
+<p>Price: &#8377 2000 /kg</p>
+<a href="/products" class="btn2">View Details</a>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</section>
+
+
+<!--TESTIMONIAL-->
+<section class="testimonial">
+<div class="banner" style="color:#fff;">
+<h1 class="title">What Our Customers Say</h1>
+</div>
+<img src="https://i.ibb.co/jWGM1LK/dish.png" class="icons inline-photo3 show-on-scroll3">
+<div class="testimonial_slider_2">
+<input type="radio" name="slider_2" id="slide_2_1" checked />
+<input type="radio" name="slider_2" id="slide_2_2" />
+<input type="radio" name="slider_2" id="slide_2_3" />
+<input type="radio" name="slider_2" id="slide_2_4" />
+<div class="boo_inner clearfix">
+
+<div class="slide_content">
+<div class="testimonial_2">
+<div class="content_2">
+<p>Farm mart products are VERY VERY GOOD in quality.Excellent customer service. It's nice to finally have an online grocery store without having to drive a long way from home to get a few items. The variety of products in this website is fresh, affordable and delivered anytime when there is an urgent need at home</p>
+</div>
+<div class="author_2"><h3>Mr. Dhanabal</h3><h4>Breach Candy</h4></div>
+</div>
+</div>
+
+<div class="slide_content">
+<div class="testimonial_2">
+<div class="content_2">
+<p>I've recently shopped groceries online and I really like Farm Mart. It is very difficult for me to go shopping with severe health issues. I recommend online grocery shopping through Farm Mart to anyone who has trouble getting out or have physical issues.</p>
+</div>
+<div class="author_2"><h3>Mr. Stephen Raj</h3><h4>Dadar</h4></div>
+</div>
+</div>
+
+<div class="slide_content">
+<div class="testimonial_2">
+<div class="content_2">
+<p>Farm Mart is the definition of "don't judge a book by its cover." I had to walk to the nearby store at least twice a day to purchase and fill in the empty grocery jars in my home. It's probably a good thing that I found this website. Its really amazing to shop with farm-mart.com when you want something fast. Customer service is also great </p>
+</div>
+<div class="author_2"><h3>Mrs. Varadharajan</h3><h4>Juhu</h4></div>
+</div>
+</div>
+
+
+</div>
+</div>
+</section>
+
+
+<section class="section4">
+<h1 class="title">FLEXIBLE PLANS</h1>
+<h5 class="sub-title mb-5">Big Discounts for everyone. Easy savings.</h5>
+<a href="/products" class="btn1">BROWSE NOW</a>
+</section>
+
+<footer>
+<div class="footer">
+<div class="column">
+<ul>
+<li class="title">FARM-MART</li>
+<li>Connects Mumbai with organic farmers across Maharashtra! <br>You will now be able to buy fresh, organically certified, fruits and vegetables directly from farmers.</li>
+</ul>
+</div>
+
+<div class="column">
+<ul>
+<li class="title">OTHER LINKS</li>
+<li><a href="/terms">Terms & Conditions</a></li>
+<li><a href="/privacy">Privacy Policy</a></li>
+<li><a href="/cookies">Cookie Policy</a></li>
+</ul>
+</div>
+
+<div class="column">
+<ul>
+<li class="title">SHORT CUT</li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/products">Grocery Menu</a></li>
+<li><a href="/">Home</a></li>
+</ul>
+</div>
+
+<div class="column">
+<ul>
+  <li>Want to sell your farm products?</li>
+<li class="title">CONTACT US</li>
+<li>
+<a href="/contact" title="Address,State,Country,Pincode"><i class="fa fa-map-marker"></i></a>
+<a href="/contact"><i class="fa fa-phone"></i></a>
+<a href="/contact"><i class="fa fa-envelope"></i></a>
+</li>
+</ul>
+</div>
+</div>
+</footer>
+
+
+<div id="myOverlay" class="overlay">
+<span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+<div class="overlay-content animate">
+<form action="/action_page.php">
+<input type="text" placeholder="Search.." name="search">
+<button type="submit"><i class="fa fa-search"></i></button>
+</form>
+</div>
+</div>
+<!-- Start of ChatBot code -->
+<!-- Start of ChatBot code -->
+<script type="text/javascript">
+  window.__be = window.__be || {};
+  window.__be.id = "<AddYourKey>";
+  (function() {
+      var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
+      be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.chatbot.com/widget/plugin.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(be, s);
+  })();
+</script>
+<!-- End of ChatBot code -->
+<!-- End of ChatBot code -->
+
+  <script  src="./javascripts/script.js"></script>
+
+</body>
+</html>

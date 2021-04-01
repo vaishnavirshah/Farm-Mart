@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">    
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="./stylesheets/product.css">
+    <link rel="stylesheet" href="./stylesheets/popup.css">
+    <link rel="stylesheet" href="/stylesheets/stars.css">
+    <link rel="shortcut icon" href="images/logo.svg">
+    <link rel="stylesheet" href="./stylesheets/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fredoka+One&family=Kanit:wght@300&display=swap" rel="stylesheet">  
+<script>
+        
+  const products2 = <%-JSON.stringify(products)%>
+</script>
+  </head>
+  <body>
+    
+  <section class="prod1">
+    <nav class="topnav navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid ms-5">
+        <a class="navbar-brand logo nav-head" href="/">FARM-MART</a>
+        <button class="navbar-toggler" type="button" style="background-color: black;" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav ms-auto d-flex flex-row" style="transition: none;">
+                <div class="d-flex flex-row mt-1">
+                <a class="nav-link px-3" href="/">Home</a>
+                <% if(currentUser) {%> 
+                <a class="nav-link px-3" href="/user/<%=currentUser._id%>/profile">Profile</a>
+                <% } %> 
+                <a class="nav-link px-3" href="/blog">Blog</a>
+                <a class="nav-link px-3" href="/contact">Contact us</a>
+              
+              </div>
+                <% if(currentUser){ %> 
+                  <a class="nav-link px-3 mt-1" href="/logout">Logout</a>
+                  <div class="d-flex flex-row">
+                    <div>
+                 <a class="nav-link px-3" href="/cart"><i class="fa fa-2x fa-shopping-bag"></i></a>
+                  </div>
+                 
+                  </div>
+               
+                <% } else { %>
+                  <div class="mt-1">
+                  <a class="nav-link px-3" href="/login">Login</a>
+                </div>
+                  
+                  <% } %>
+                 
+              </div>
+          </div>
+      </div>
+    </nav>
+    <section class="intro1 d-flex flex-column justify-content-center  align-items-center mb-3">
+      <h2 class="intro-index">Grocery Menu</h2>
+      <h7 class="intro-index-2">Home-Grocery Menu</h7>
+    </section>
+    <div >
+      <div class="col-10 offset-1">
+        <%- include('../partials/flash')%>
+        </div>
+    <div class="input-group mb-3">
+
+      
+      <!-- <div class="d-flex flex-row ms-auto">
+        <div class="dropdown mx-2">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+           Filter By category
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/products">All</a>
+            <a class="dropdown-item" href="/products?category=fruit">Fruit</a>
+            <a class="dropdown-item" href="/products?category=vegetable">vegetable</a>
+            <a class="dropdown-item" href="/products?category=dairy">dairy</a>
+            <a class="dropdown-item" href="/products?category=pulses">pulses</a>
+            <a class="dropdown-item" href="/products?category=grains">grains</a>
+            <a class="dropdown-item" href="/products?category=spices">spices</a>
+            <a class="dropdown-item" href="/products?category=oils">oils</a>
+          </div>
+        </div>
+        
+        <div class="form">
+          <form class="form-inline" action="/searchItem" method="POST" >
+            <div class="row no-gutter">
+              <div class="col-8"><input class="form-control " type="search" placeholder="Search" aria-label="Search" name="search"></div>
+              
+              <div class="col-2"><button type="submit" class="btn" style="background-color: black; color: white;">
+                <i class="fa fa-search"></i>
+              </button></div>
+            </div>
+          </form>
+           <input type="text" id="form1" placeholder="Search" class="form-control" /> -->
+        </div>
+      
+      </div> 
+    </div>
+  </div>
+  <div>
+    <br>
+    <br>
+    <h1 style="text-align: center;color:#1c1c1c;font-family: cairo,sans-serif;font-weight: 700;margin-bottom:80px;" >Our Products</h1>
+    
+    <% for (i=0;i<bestSellers.length;i++) { %>
+    
+    <div class="popup" id="popup1-<%=i%>">
+      <div class="overlay"></div>
+      <div class="content" style="border-radius: 10px;padding: 18px;">
+        <div class="close" style="height: 200px;">
+          <div class="close-btn" onclick="togglePopup1(<%=i%>)">&times;</div>
+        </div>
+          <div>
+            <div style="margin-top:28px;margin-left: 0px;">              
+              <div class="row">
+                <div class="col-5 me-5" style="height:350px;">
+                  <img
+                    src="<%=bestSellers[i].images.path%>"
+                    class="card-img-top"
+                    alt="ALMONDS"
+                    style="height:310px;width: 100%;object-fit:cover;",
+
+                  />
+                </div>
+                <div class="col-6" style="overflow-y:auto;height:330px;">
+
+                  <div class="row-2">
+                    
+                    <span class="category text-muted"><%= bestSellers[i].category%></span>
+                    <!--stock-label-->
+                    <div class="d-flex justify-content-between ">
+                   
+                    <h1 class="product-h1"><%=bestSellers[i].title%></h1>
+                    <div>
+                    <span class="stock">In Stock</span>
+                  </div>
+                  </div>
+
+                  </div>
+                  <div class="price-new mb-1">
+                    <span class="price-new-dollar" style="color: black;">&#8377 <%= bestSellers[i].price%>/kg</span>
+              
+                  </div>
+                  <div class="row-4">
+                    <div class="descr">
+                      <p>
+                        <%= bestSellers[i].description%>
+                      </p>
+                    </div>
+                  </div>
+                  
+                 
+                  
+                  <form action="/products/<%=bestSellers[i]._id%>/cart" method="POST">
+                    
+                    <div>
+                      <div class="select-size">
+                        <span
+                          >Quantity
+                         
+                          
+                        </span>
+                        <select class="size" name="quantity">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                      </div>
+                    </div>
+                  <button class="btn1"style="background-color: black; color: white;">Add to Cart</button></form>
+                  </div>
+                </div>
+              </div>
+          
+            </div>
+          </div>
+          
+      </div>
+     
+    </div>
+
+    <div class="popup review-popup" id="review-popup1-<%=i%>">
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="close">
+          <div class="close-btn" onclick="reviewtogglePopup1(<%=i%>)">&times;</div>
+        </div>
+        <div class="row justify-content-between" style="margin-top:30px;">
+          <div class="col-5">
+         
+            <h2 style="color: black;">Leave a Review</h2>
+            <form action="/products/<%=bestSellers[i]._id%>/reviews" method="POST" class="mb-2 validated-form" novalidate>
+                <!-- <div class="mb-3">
+                    <label class="form-label" for="rating">Rating</label>
+                    <input class="form-range" type="range" min="1" max="5" name="review[rating]" id="rating">
+                </div> -->
+                <fieldset class="starability-basic">
+                    <input type="radio" id="no-rate1-<%=i%>" class="input-no-rate" name="reviews[rating]" value="1" checked
+                        aria-label="No rating." />
+                    <input type="radio" id="first1-rate1-<%=i%>" name="reviews[rating]" value="1" />
+                    <label for="first1-rate1-<%=i%>" title="Terrible">1 star</label>
+                    <input type="radio" id="first1-rate2-<%=i%>" name="reviews[rating]" value="2" />
+                    <label for="first1-rate2-<%=i%>" title="Not good">2 stars</label>
+                    <input type="radio" id="first1-rate3-<%=i%>" name="reviews[rating]" value="3" />
+                    <label for="first1-rate3-<%=i%>" title="Average">3 stars</label>
+                    <input type="radio" id="first1-rate4-<%=i%>" name="reviews[rating]" value="4" />
+                    <label for="first1-rate4-<%=i%>" title="Very good">4 stars</label>
+                    <input type="radio" id="first1-rate5-<%=i%>" name="reviews[rating]" value="5" />
+                    <label for="first1-rate5-<%=i%>" title="Amazing">5 stars</label>
+                </fieldset>
+                <div class="mb-3">
+                    <textarea class="form-control" name="reviews[body]" id="body1-<%=i%> " placeholder="Add a description" cols="3" rows="3" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <button class="btn review-btn"style="background-color: black; color: white;">Submit</button>
+            </form>
+          
+          </div>
+          
+          <div class="col-6">
+            <h2 style="color: black;">User Reviews</h2>
+            <div class="review-display">
+              <% if(bestSellers[i].reviews.length>0){ %>
+            <% for(let review of bestSellers[i].reviews) { %>
+              <div class="card card-review">
+                  <div class="card-body">
+                      <h5 class="card-title" style="color: black;"> <%= review.owner.username%></h5>
+                      <div class="row">
+                        <div class="col-7">
+                      <p class="starability-result" data-rating="<%=review.rating%>">
+                          Rated: <%= review.rating %> stars
+                      </p>
+                    </div>
+                      <div class="col-3">
+                      <%  if( currentUser && review.owner.equals(currentUser._id))  {%>
+                        <form action="/products/<%=bestSellers[i]._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                        <% } %>
+                      </div>
+                      </div>
+                      <!-- <h6 class="card-subtitle mb-2 text-muted">By <%= review.owner.username%></h6> -->
+                      <p class="card-text"><%= review.body%></p>
+                     
+                  </div>
+              </div>
+              <hr>
+              <% } %>
+              <% } else { %>
+                <h5>No Reviews as of now..</h5>
+                <h5>Be the first one to review</h5>
+                <% } %>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+   
+
+        <% } %>
+
+    <div class="row">
+      <div class="" style="width:330px;">
+        <div class="d-flex flex-column align-items-center">
+          <div class=""><h4 style="color: #1c1c1c;
+            font-weight: 700;
+            margin-bottom: 20px;font-family: cairo,sans-serif;">Categories</h4></div>
+          <div class=""><a class="dropdown-item" href="/products" style="">All</a></div>
+          <div class=""><a class="dropdown-item" href="/products?category=fruit">Fruit</a></div>
+          <div class=""><a class="dropdown-item" href="/products?category=vegetable">vegetable</a></div>
+          <div class=""><a class="dropdown-item" href="/products?category=dairy">dairy</a></div>
+          <div class=""><a class="dropdown-item" href="/products?category=nuts">nuts</a></div>
+          <div class=""><a class="dropdown-item" href="/products?category=grains">grains</a></div>
+          <div class=""><a class="dropdown-item" href="/products?category=spices">spices</a></div>
+          <div class=""><a class="dropdown-item" href="/products?category=oils">oils</a></div>
+          <div class="d-flex justify-content-center">
+            <form class="form-inline" action="/searchItem" method="POST" >
+              <div class="row no-gutter mt-3 d-flex justify-content-center">
+                <div class="col-8"><input class="form-control " type="search" placeholder="Search" aria-label="Search" name="search"></div>
+                
+                <div class="col-2"><button type="submit" class="btn" style="background-color: black; color: white;">
+                  <i class="fa fa-search"></i>
+                </button></div>
+              </div>
+            </form>
+            <!-- <input type="text" id="form1" placeholder="Search" class="form-control" /> -->
+          </div>
+        </div>
+        <hr style="margin-left:28px;color: #7fad39;">
+      <div class="d-flex justify-content-center">
+        <h4 class="ms-5">Bestsellers</h4>
+      </div>
+      
+      <div class="carousel slide multi-item-carousel mt-3 ms-5 me-5 mb-5 " id="theCarousel" style="width:100%;height:100%;">
+        <div class="carousel-inner  w-100 d-flex flex-column justify-content-center mb-5">
+          <div class="sales product-grid carousel-item  active" id="product-grid1-<%=0%>">
+           
+            <img src="<%=bestSellers[0].images.path%>" class="img-fluid mb-4" style="width: 100%;height: 100%;">
+            <ul class="social social1 row d-flex justify-content-evenly me-4">
+              <li class="col-2" style="text-align: center;"><a onclick="togglePopup1(<%=0%>)" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+              
+              <form action="/products/<%=bestSellers[0]._id%>/cart" method="POST" class="col-2" id="formcart1<%=0%>">
+              <li style="text-align: center;"><a data-tip="Wishlist" onclick='document.getElementById("formcart1<%=0%>").submit();'><i class="fa fa-shopping-cart">
+              </a></i></li>
+            </form>
+              <li class="col-2" style="text-align: center;"><a onclick="reviewtogglePopup1(<%=0%>)" data-tip="Compare"><i class="fa fa-star"></i></a></li>
+              
+          </ul>
+        
+      
+</div>
+          <% for(i=1;i<bestSellers.length;i++) {%>
+      <div class=" sales product-grid carousel-item" id="product-grid1-<%=i%>" >
+              
+            <img src="<%=bestSellers[i].images.path%>" class="img-fluid mb-4" style="width: 100%;height: 100%;">
+            <ul class="social social1 row d-flex justify-content-evenly me-4">
+              <li class="col-2" style="text-align: center;"><a onclick="togglePopup1(<%=i%>)" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+              
+              <form action="/products/<%=bestSellers[i]._id%>/cart" method="POST" class="col-2" id="formcart1<%=i%>">
+              <li style="text-align: center;"><a data-tip="Wishlist" onclick='document.getElementById("formcart1<%=i%>").submit();'><i class="fa fa-shopping-cart">
+              </a></i></li>
+            </form>
+              <li class="col-2" style="text-align: center;"><a onclick="reviewtogglePopup1(<%=i%>)" data-tip="Compare"><i class="fa fa-star"></i></a></li>
+              
+          </ul>
+        
+        
+
+      </div>
+       
+          <%}%> 
+          
+         
+        </div>
+        <hr style="margin-right:28px;color: #7fad39;">
+      </div>
+    </div>
+      <div class="col">
+        <div class="row d-flex" id="page" style="margin-left: 50px;">
+          <% for (i=0;i<products.length;i++) { %>
+    
+          
+            <div class="col-3" style="margin-right:50px;">
+             
+              
+            <button class="product-card1 mb-4">
+            <div class="card">
+              <div class="product-grid" id="product-grid-<%=i%>">
+               <img src="<%=products[i].images.path%>" class="card-img-top" alt="..." style="object-fit:cover;height:310px;">
+               <ul class="social row d-flex ">
+                <li class="col-2 ms-4 me-3"><a onclick="togglePopup(<%=i%>)" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                
+                <form action="/products/<%=products[i]._id%>/cart" method="POST" class="col-2 me-3" id="formcart<%=i%>">
+                <li><a data-tip="Wishlist" onclick='document.getElementById("formcart<%=i%>").submit();'><i class="fa fa-shopping-cart">
+                </a></i></li>
+              </form>
+                <li class="col-2"><a onclick="reviewtogglePopup(<%=i%>)" data-tip="Compare"><i class="fa fa-star"></i></a></li>
+            
+            </ul>
+            </div>
+              <hr>
+              <div class="card-body">
+                <h5 class="card-title"><%= products[i].title %></h5>
+              </div>
+              
+            </div>
+          </button>
+        
+        </div>
+       
+          <% } %>
+        </div>
+        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+          <ul class="pagination ms-auto me-5">
+            <nav aria-label="Page navigation example">
+             
+              
+      
+            <li class="page-item" id="previous-page">
+              <a class="page-link me-1" style='color:black' href="javascript:void(0)" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            </nav>
+          </ul>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+ <!-- row end  -->
+      
+    <br>
+    <br>
+
+    
+
+
+
+
+
+    <% for (i=0;i<products.length;i++) { %>
+      <div class="popup" id="popup-<%=i%>">
+        <div class="overlay"></div>
+        <div class="content" style="border-radius: 10px;padding: 18px;">
+          <div class="close">
+            <div class="close-btn" onclick="togglePopup(<%=i%>)">&times;</div>
+          </div>
+            <div>
+              <div style="margin-top:28px;margin-left: 0px;">
+                <div class="row">
+                  <div class="col-5 ms-3 me-4" style="height:350px;">
+                    <img
+                      src="<%=products[i].images.path%>"
+                      class="card-img-top"
+                      alt="ALMONDS"
+                      style="height:310px;width: 100%;object-fit:cover;",
+
+                    />
+                  </div>
+                  <div class="col-6" style="overflow-y:auto;height:330px;">
+                    <div class="row-2">
+                      
+                      <span class="category text-muted"><%= products[i].category%></span>
+                      <!--stock-label-->
+                      <div class="d-flex justify-content-between ">
+                     
+                      <h1 class="product-h1"><%=products[i].title%></h1>
+                      <div>
+                      <span class="stock">In Stock</span>
+                    </div>
+                    </div>
+  
+                    </div>
+                    <div class="price-new mb-1">
+                      <span class="price-new-dollar" style="color: black;">&#8377 <%= products[i].price%>/kg</span>
+                
+                    </div>
+                    <div class="row-4">
+                      <div class="descr">
+                        <p>
+                          <%= products[i].description%>
+                        </p>
+                      </div>
+                    </div>
+                   
+                   
+                    
+                    <form action="/products/<%=products[i]._id%>/cart" method="POST">
+                      
+                      <div>
+                        <div class="select-size">
+                          <span
+                            >Quantity
+                           
+                            
+                          </span>
+                          <select class="size" name="quantity">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                          </select>
+                        </div>
+                      </div>
+                    <button class="btn1"style="background-color: black; color: white;">Add to Cart</button></form>
+                    </div>
+                  </div>
+                </div>
+            
+              </div>
+            </div>
+            
+        </div>
+       
+      </div>
+  
+      <div class="popup review-popup" id="review-popup-<%=i%>">
+        <div class="overlay"></div>
+        <div class="content">
+          <div class="close">
+            <div class="close-btn" onclick="reviewtogglePopup(<%=i%>)">&times;</div>
+          </div>
+          <div class="row justify-content-between" style="margin-top:30px;">
+            <div class="col-5">
+           
+              <h2 style="color: black;">Leave a Review</h2>
+              <form action="/products/<%=products[i]._id%>/reviews" method="POST" class="mb-2 validated-form" novalidate>
+                  <!-- <div class="mb-3">
+                      <label class="form-label" for="rating">Rating</label>
+                      <input class="form-range" type="range" min="1" max="5" name="review[rating]" id="rating">
+                  </div> -->
+                  <fieldset class="starability-basic">
+                      <input type="radio" id="no-rate-<%=i%>" class="input-no-rate" name="reviews[rating]" value="1" checked
+                          aria-label="No rating." />
+                      <input type="radio" id="first-rate1-<%=i%>" name="reviews[rating]" value="1" />
+                      <label for="first-rate1-<%=i%>" title="Terrible">1 star</label>
+                      <input type="radio" id="first-rate2-<%=i%>" name="reviews[rating]" value="2" />
+                      <label for="first-rate2-<%=i%>" title="Not good">2 stars</label>
+                      <input type="radio" id="first-rate3-<%=i%>" name="reviews[rating]" value="3" />
+                      <label for="first-rate3-<%=i%>" title="Average">3 stars</label>
+                      <input type="radio" id="first-rate4-<%=i%>" name="reviews[rating]" value="4" />
+                      <label for="first-rate4-<%=i%>" title="Very good">4 stars</label>
+                      <input type="radio" id="first-rate5-<%=i%>" name="reviews[rating]" value="5" />
+                      <label for="first-rate5-<%=i%>" title="Amazing">5 stars</label>
+                  </fieldset>
+                  <div class="mb-3">
+                      <textarea class="form-control" name="reviews[body]" id="body-<%=i%> " placeholder="Add a description" cols="3" rows="3" required></textarea>
+                      <div class="valid-feedback">
+                          Looks good!
+                      </div>
+                  </div>
+                  <button class="btn review-btn"style="background-color: black; color: white;">Submit</button>
+              </form>
+            
+            </div>
+            
+            <div class="col-6">
+              <h2 style="color: black;">User Reviews</h2>
+              <div class="review-display">
+                <% if(products[i].reviews.length>0){ %>
+              <% for(let review of products[i].reviews) { %>
+                <div class="card card-review">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: black;"> <%= review.owner.username%></h5>
+                        <div class="row">
+                          <div class="col-7">
+                        <p class="starability-result" data-rating="<%=review.rating%>">
+                            Rated: <%= review.rating %> stars
+                        </p>
+                      </div>
+                        <div class="col-3">
+                        <%  if( currentUser && review.owner.equals(currentUser._id))  {%>
+                          <form action="/products/<%=products[i]._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
+                              <button class="btn btn-sm btn-danger">Delete</button>
+                          </form>
+                          <% } %>
+                        </div>
+                        </div>
+                        <!-- <h6 class="card-subtitle mb-2 text-muted">By <%= review.owner.username%></h6> -->
+                        <p class="card-text"><%= review.body%></p>
+                       
+                    </div>
+                </div>
+                <hr style="color:#7fad39;">
+                <% } %>
+                <% } else { %>
+                  <h5>No Reviews as of now..</h5>
+                  <h5>Be the first one to review</h5>
+                  <% } %>
+              </div>
+            </div>
+          </div>
+          </div>
+          </div>
+     
+  
+  
+  
+      <% } %>
+    
+     
+      </section>
+  
+      
+  
+  
+      
+<footer>
+  <div class="footer">
+  <div class="column">
+  <ul>
+  <li class="title">FARM-MART</li>
+  <li>Connects Mumbai with organic farmers across Maharashtra! <br>You will now be able to buy fresh, organically certified, fruits and vegetables directly from farmers.</li>
+  </ul>
+  </div>
+  
+  <div class="column">
+  <ul>
+  <li class="title">OTHER LINKS</li>
+  <li><a href="/terms">Terms & Conditions</a></li>
+  <li><a href="/privacy">Privacy Policy</a></li>
+  <li><a href="/cookies">Cookie Policy</a></li>
+  </ul>
+  </div>
+  
+  <div class="column">
+  <ul>
+  <li class="title">SHORT CUT</li>
+  <li><a href="/blog">Blog</a></li>
+  <li><a href="/products">Grocery Menu</a></li>
+  <li><a href="/">Home</a></li>
+  </ul>
+  </div>
+  
+  <div class="column">
+  <ul>
+    <li>Want to sell your farm products?</li>
+  <li class="title">CONTACT US</li>
+  <li>
+  <a href="/contact" title="Address,State,Country,Pincode"><i class="fa fa-map-marker"></i></a>
+  <a href="/contact"><i class="fa fa-phone"></i></a>
+  <a href="/contact"><i class="fa fa-envelope"></i></a>
+  </li>
+  </ul>
+  </div>
+  </div>
+  </footer>
+  
+        <script>
+          const bestsellers1=<%-JSON.stringify(bestSellers)%>;
+          const products1 = <%-JSON.stringify(products)%>
+      </script>
+         <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
+         <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+         <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+        <script src="./javascripts/card.js"></script>
+        <script src="/javascripts/paginate.js"></script>
+    </body>
+  </html>
+  

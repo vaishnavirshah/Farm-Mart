@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">    
+   
+    
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/cart1.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fredoka+One&family=Kanit:wght@300&display=swap" rel="stylesheet">  
+
+  </head>
+  <body>
+    <nav class="topnav navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid ms-5">
+          <a class="navbar-brand logo nav-head" href="/">FARM-MART</a>
+          <button class="navbar-toggler" type="button" style="background-color: black;" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto d-flex flex-row" style="transition: none;">
+                  <div class="d-flex flex-row mt-1">
+                  <a class="nav-link px-3" href="/">Home</a>
+                  <a class="nav-link px-3" href="/products">Grocery Menu</a>
+                
+                  <a class="nav-link px-3" href="/blog">Blog</a>
+                  <a class="nav-link px-3" href="/contact">Contact us</a>
+                </div>
+                  <% if(currentUser){ %> 
+                    <a class="nav-link px-3 mt-1" href="/logout">Logout</a>
+                    <div class="d-flex flex-row">
+                      <div>
+                      <a class="nav-link px-3" href="/cart"><i class="fa fa-2x fa-shopping-bag"></i></a>
+                    </div>
+                    
+                    </div>
+                 
+                  <% } else { %>
+                    <div class="mt-1">
+                    <a class="nav-link px-3" href="/login">Login</a>
+                  </div>
+                    
+                    <% } %>
+                   
+                </div>
+            </div>
+        </div>
+      </nav>
+      <section class="intro1 d-flex flex-column justify-content-center  align-items-center mb-5">
+        <h2 class="intro-index">Shopping Cart</h2>
+        <h7 class="intro-index-2">Home-Shopping Cart</h7>
+      </section>
+
+      <section class="display-cart mb-5">
+        <%- include('../partials/flash')%>
+        
+          <div class="d-flex flex-row">
+              <div class="row1-1">
+                  <h2 class="cart-prod1">Products</h2>
+              </div>
+              <div class="d-flex flex-row">
+                <div class="row2-1">
+                    <h2 class="cart-prod1">Price</h2>
+                </div>
+                <div class="row2-1">
+                    <h2 class="cart-prod1">Quantity</h2>
+                </div>
+                <div class="row2-1">
+                    <h2 class="cart-prod1">Total</h2>
+                </div>
+              </div>
+          </div>
+          <hr>
+          <div class="mb-4">
+            <% for (let i of items) { %>
+                <div class="basket-product">
+                  <div class="item d-flex flex-row">
+                    <div class="product-info d-flex flex-row">
+                        <div class="me-5" >
+                            <img
+                            src="<%= i.imagepath %>"
+                            alt="Placholder Image 2"
+                            class="product-frame"
+                            style="width: 180px; height: 220px;"/>
+                        </div>
+                      <div class="d-flex justify-content-center align-items-center">
+                        <h5><%= i.productName %></h5>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-center align-items-center">
+                        <div class="row3-1">
+                            <p><b>&#8377 <%=i.productPrice%></b></p>
+                        </div>
+                        <div class="quantity row3-1 " > 
+                        <div>
+                            <p><%=i.quantity%></p>
+                        </div>
+                        </div>
+                        <div class="row3-1">
+                            <p><b> &#8377 <%= i.quantity*i.productPrice %> </b></p>
+                        </div>
+                        <div>
+                            <form
+                            action="/user/<%=userId%>/cart/<%=i._id%>?_method=DELETE"
+                            method="POST"
+                          >
+                            <button class="btn"><i class="fa fa-remove"></i></button>
+                          </form>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                    <hr>
+                <% } %>
+          </div>
+          <div class="mb-4">
+          <button class="btn cart-button"><a href="/products" style="color: #6f6f6f;">Continue Shopping</a></button>
+          </div>
+        <div class="d-flex flex-row justify-content-between">
+          <div class="d-flex flex-column">
+            <div>
+                <h3>Discount Codes</h3>
+            </div>
+            <div>
+                <form action="/user/<%= currentUser._id%>" method="POST">
+                    <input type="text" name="discount" placeholder="Enter your coupon code" style="text-align: center;width: 250px; height:45px;" class="me-3">
+                    <button class="btn coupon">Apply Coupon</button>
+                </form>
+            </div>
+          </div>
+          <div class="d-flex flex-column p-5" style="width: 450px; background-color: #f5f5f5;">
+              <div class="mb-3">
+                  <h4>Cart Total</h4>
+              </div>
+              <div class="d-flex flex-row justify-content-between">
+                <div>
+                    <h5>Sub total</h5>
+                </div>
+                <div>
+                    <h5 style="color: red;"><b>&#8377 <%=total%></b></h5>
+                </div>
+             </div>
+             <hr>
+             <% if(applied != 0) {%> 
+             <div class="d-flex flex-row justify-content-between mb-3">
+                <div>
+                    <h5>Discount</h5>
+                </div>
+                <div>
+                    <h5 style="color: red;"><b> <%=applied%> %</b></h5>
+                </div>
+             </div>
+             <hr>
+            <% } %> 
+             <div class="d-flex flex-row justify-content-between mb-3">
+                <div>
+                    <h5>Total</h5>
+                </div>
+                <div>
+                  <% var discountedTotal = total * (1 - (applied /100))  %> 
+                  <% if(total == 0) {%>
+                    <% discountedTotal =0  %>
+                  <% } %>   
+                    <h5 style="color: red;"><b>&#8377 <%=discountedTotal%></b></h5>
+                </div>
+             </div>
+             <form action="/checkoutPage" method="POST">
+              <div style="display: none;">
+                <input type="text" name="applied" value="<%=applied%>">
+                <input type="text" name="total" value=" <%=total%>">
+                <input type="text" name="discountedTotal" value=" <%=discountedTotal%>">
+              </div>
+             <button class="btn coupon" style="background-color: #7fad39;">Proceed to checkout</button>
+            </form>
+          </div>
+        </div>
+        </section>
+      
+ 
+<footer>
+  <div class="footer">
+  <div class="column">
+  <ul>
+  <li class="title">FARM-MART</li>
+  <li>Connects Mumbai with organic farmers across Maharashtra! <br>You will now be able to buy fresh, organically certified, fruits and vegetables directly from farmers.</li>
+  </ul>
+  </div>
+  
+  <div class="column">
+  <ul>
+  <li class="title">OTHER LINKS</li>
+  <li><a href="/terms">Terms & Conditions</a></li>
+  <li><a href="/privacy">Privacy Policy</a></li>
+  <li><a href="/cookies">Cookie Policy</a></li>
+  </ul>
+  </div>
+  
+  <div class="column">
+  <ul>
+  <li class="title">SHORT CUT</li>
+  <li><a href="/blog">Blog</a></li>
+  <li><a href="/products">Grocery Menu</a></li>
+  <li><a href="/">Home</a></li>
+  </ul>
+  </div>
+  
+  <div class="column">
+  <ul>
+    <li>Want to sell your farm products?</li>
+  <li class="title">CONTACT US</li>
+  <li>
+  <a href="/contact" title="Address,State,Country,Pincode"><i class="fa fa-map-marker"></i></a>
+  <a href="/contact"><i class="fa fa-phone"></i></a>
+  <a href="/contact"><i class="fa fa-envelope"></i></a>
+  </li>
+  </ul>
+  </div>
+  </div>
+  </footer>
+  
+    </body>
+    </html>
+
+
+
+
+    
+    

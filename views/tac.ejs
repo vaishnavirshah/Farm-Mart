@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">    
+    <link rel="stylesheet" href="../stylesheets/tac.css">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    
+   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fredoka+One&family=Kanit:wght@300&display=swap" rel="stylesheet">  
+
+  </head>
+  <body>
+    <nav class="topnav navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid ms-5">
+          <a class="navbar-brand logo nav-head" href="/">FARM-MART</a>
+          <button class="navbar-toggler" type="button" style="background-color: black;" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto d-flex flex-row" style="transition: none;">
+                  <div class="d-flex flex-row mt-1">
+                  <a class="nav-link px-3" href="/products">Home</a>
+                  <a class="nav-link px-3" href="/products">Grocery Menu</a>
+                
+                  <a class="nav-link px-3" href="/products">Blog</a>
+                  <a class="nav-link px-3" href="/contact">Contact us</a>
+                
+                </div>
+                  <% if(currentUser){ %> 
+                    <a class="nav-link px-3 mt-1" href="/logout">Logout</a>
+                    <div class="d-flex flex-row">
+                      <div>
+                      <a class="nav-link px-3" href="/cart"><i class="fa fa-2x fa-shopping-bag"></i></a>
+                    </div>
+                    
+                    </div>
+                 
+                  <% } else { %>
+                    <div class="mt-1">
+                    <a class="nav-link px-3" href="/login">Login</a>
+                  </div>
+                    
+                    <% } %>
+                   
+                </div>
+            </div>
+        </div>
+      </nav>
+      <section class="intro1 d-flex flex-column justify-content-center  align-items-center">
+        <h2 class="intro-index">Terms and Conditions</h2>
+        <h7 class="intro-index-2">Home-Terms and Conditions</h7>
+      </section>
+      <section style="margin-bottom: 20px;">
+    <div class="terms1"  >
+      
+        <div class="terms-header1" >
+          <p> Terms & Conditions</p>
+          Please read the Terms and Conditions below.
+        </div>
+<div class="read-terms1" style="background-color: white;margin-bottom: 20px;">
+    TERMS AND CONDITIONS<br><br>
+
+We would rather operate without the need for defined terms and conditions but unfortunately we have no choice. If there is any term or condition that prevents you from dealing with us, we will look at it, and if reasonable, will confirm in writing its exclusion as part of our agreement.<br><br>
+
+The following terms and conditions apply to all design and associated services offered by Farm-mart. By ordering services from Farm-mart you are agreeing to the following terms and conditions.<br><br>
+
+Ethical Issues<br>
+We reserve the right to refuse to provide services for a company or associated services which does not accord with our ethical policy or that we judge to be unfit due to content or otherwise. This includes, but is not limited by, companies or sites containing or promoting adult oriented material such as pornography, companies or sites which promote hatred towards persons belonging to any ethnic group, religion or sexual orientation and companies or sites which infringe copyright or are contrary to UK or other relevant national or local laws or regulations.<br><br>
+
+Contract Commencement<br>
+The contract between Farm-mart and the client shall consist of the quotation with its specifications and these terms and conditions.<br><br>
+
+It may not be necessary to have a signature for the contract to commence, verbal communication, email communication or other exchange making it clear that the work specified is required to be carried out shall constitute commencement of the contract and a contractual agreement between the client and Farm-mart shall exist based on the quotation with its specifications and these terms and conditions.<br><br>
+
+Farm-mart cannot always guarantee to start work immediately on a commission but will arrange a date with the client as to when work can commence. An anticipated finishing date will be agreed and Farm-mart will do its best to adhere to that but cannot guarantee to do so in the light of circumstances outside its control.<br><br>
+
+Where in the instance that a time scale has been agreed, Farm-mart will not be responsible for any consequential losses to the client if the deadline is not met.<br><br>
+
+Design Development Process <br>
+When designing graphics or designing for print, Farm-mart will provide a draft of the design by submitting to the client digital prints or Adobe Acrobat PDFs, which the client may view and comment upon the progress. When designing for the internet or stand alone digital media, Farm-mart will provide a draft of the design on its own server during development so that the client may view and comment upon the progress. When the design meets the specifications set out in the quotation with its specifications, Farm-mart will invoice the client for the full amount due.
+On receipt of payment, in the case of graphic design or design for print, Farm-mart will provide either the client or the client's specified supplier a CD-ROM disc with all finalised artwork. On receipt of payment, in the case of web design, Farm-mart will publish the website on the client's server, or provide a CD-ROM disc for the client to upload.<br><br>
+
+Where in the instance that a time scale has been agreed, Farm-mart will not be responsible for any consequential losses to the client if the deadline is not met. Farm-mart uses its best endeavours to ensure the website and other services remain functional at all time. However, Farm-mart can not guarantee or warrant that the functions and content of the website or other services will be uninterrupted or error-free. Any problems will be dealt with as speedily as is appropriate to the content and function of the website and may be chargeable at our normal rate during working hours and at double that rate outside normal working hours.<br><br>
+
+Once the design, website and / or other services meet the terms of the quotation with its specifications any modifications to the design will be considered an amendment to the contract. In the absence of a maintenance agreement the time and costs involved in making such changes will be charged to the client.<br><br>
+
+Web Design Standards, Accessibility <br>
+Farm-mart makes every effort to design web pages to current web standards and thus display well in the most popular current browsers, but cannot accept responsibility for pages which do not display acceptably in new versions of non-web standard browsers. One version of the website will be created that will display well in all web-standard browsers and at all usual display resolutions.<br><br>
+
+Supply of Content by the Client <br>
+The client undertakes to inform us prior to commencement of the project if there is a critical requirement to meet specific performance criteria.<br><br>
+
+If, during the development, the client does not supply the content required in order to complete the commission within the anticipated time frame, Farm-mart will invoice up to the full amount quoted. When the content is supplied there may be additional time costs involved due to the overrun of the project which impinges on the ability of Farm-mart to service other clients.<br><br>
+
+Copyright<br>
+All material, both text and images, supplied by the client and used in the construction of the client's project, will remain the client's property. All such material will be assumed to be the property of the client and free to use without fear of breach of copyright laws. The client shall indemnify Farm-mart against all and any claims arising from the use of materials of any sort provided by the client or obtained under the direction of the client from third parties such as graphic designers.<br><br>
+The copyright for all material provided by Farm-mart, such as HTML code, graphics, photographs and text, will remain the property of Farm-mart until such time as payment has been made in full. They will then become the property of the client with copyright shared between the client and Farm-mart. This allows either party expeditiously to pursue any copyright infringement. Should the client wish to retain exclusive copyright this shall be arranged but the copyright of Farm-mart shall only be assigned if done so expressly and in writing to the client.<br><br>
+Background programming, databases, CGI or JavaScripts produced by Farm-mart remain the intellectual property of Farm-mart unless otherwise expressly agreed in writing. Copyright of any background programming, databases, CGI or JavaScripts remain the property of Farm-mart for the duration of the website's existence and shall not be assigned, modified or reused without the express written permission of Farm-mart. No portion of the coding can be copied, duplicated or redistributed in any form electronic or otherwise unless a licensing agreement has been reached.<br><br>
+
+Testimonial, Reference and Links<br>
+Farm-mart retains the right to display graphics and other Web design elements as examples of their work in their respective portfolios. Farm-mart retain the right to refer other prospective clients to your website as testimonial or reference material.<br><br>
+
+Search Engine Submission and Results <br>
+Farm-mart will submit a client's website to the major search engines. Further work based on keyword popularity analysis, search engine optimisation based specifically around your organisation and its 'competition' is best carried out by specialist contractors. This can be arranged but is not part of the contract unless specifically included in the quotation. Any subsequent amendments to the website as a result of professional analysis may be charged to the client.<br><br>
+
+Farm-mart can accept no responsibility or liability if any search engine, online directory or search site chooses not to list a client's web site.<br><br>
+
+Payment <br>
+Payment terms are strictly 7 days unless otherwise agreed. Whilst any payment due under the agreement remains outstanding, Farm-mart shall be entitled at its sole and absolute discretion to withhold provision of any goods or services it would otherwise be obliged to provide under the agreement. Farm-mart expects payment by cheque, electronic bank transfer, debit/credit card or cash within 7 days of the date on the invoice.<br><br>
+
+Payment may be made in Great British Pound Only. Any payment returned by the bank or credit card company will incur a £10 administration charge in addition to any charges made by the bank. This will be invoiced and will be added to the total outstanding debt owed by the customer.<br><br>
+
+In accordance with the Late Payment of Commercial Debts Act 1998 interest will be charged on all payments received outside of payment terms at the rate of eight per cent above the Bank of England Base Rate as applicable on the previous 31 December or 30 June whichever is the most recent. In case collection proves necessary, the client agrees to pay all fees (including all legal fees and court costs) incurred by that process.<br><br>
+
+If for any reason whatsoever we are unable to provide an agreed product or service in accordance with these terms and conditions our liability shall be limited in its entirety to a proportional refund of any fees paid by you for the service or product.<br><br>
+
+Website Maintenance <br>
+Where Farm-mart undertakes to maintain or update a client's website a system of communication will be established that meets the needs of both the client and of Farm-mart to carry out the maintenance to a service level agreed.<br><br>
+
+Payment for maintenance is usually by monthly fees paid in advance and is reviewed and renewable annually. Where the client cancels a maintenance contract with less than one months' notice, there will be a charge of three months' fees.<br><br>
+
+Where Farm-mart cancels a maintenance contract other than for a reason set out in Cancellation and Termination below, a refund of the fees appropriate to that part of the month remaining will be made.<br><br>
+
+In instances where the client does not come to a web site management agreement it is the sole responsibility of the client to manage the site. Farm-mart will no longer be responsible for the site upon completion unless an alternative agreement has been reached. To assist the operation of a website maintenance contract an email account will be set up in the name of webmaster@yourdomainname.co.uk to allow site visitors to contact Farm-mart directly with technical problems. In the absence of a maintenance agreement, Farm-mart will fix all errors notified to Farm-mart in writing within thirty days of the site being put live on the Internet. If errors are reported after more than thirty days the time and costs involved in making such changes will be charged to the client.<br><br>
+
+Unforeseen and Additional Costs and Expenses
+The transfer of domain names to another server can sometimes become a complex and time consuming matter. All administrative fees to third parties and the time taken to organise the transfer will be charged to the client irrespective of any quoted amount set out in the quotation with its specifications.<br><br>
+
+Additional costs incurred in the provision of: stock photography; electronic commerce software; online transaction processing solutions; domain name registration; web space; Internet connection provided by third parties are non refundable.<br><br>
+
+Additional features to websites, including extra database services, specific hosting requirements, animations that are not included in the quotation are subject to surcharge. In the event a feature is required which has not been included in the quotation Farm-mart will give notice prior to implementation and seek acceptance of the surcharge. The cost will be added to the final invoice unless the amount exceeds £500 in which case an interim half will be invoiced before implementation and the remainder will be added to the final invoice.<br><br>
+
+Domain Name Research and Registration<br>
+Where the client requests Farm-mart to research and register a domain name the domain name will always be the property and in the control of the client. If, for whatever reason, this is not possible then the client will be informed of the fact. All fees and costs incurred will be payable by the client.<br><br>
+
+Website Hosting Services <br>
+Hosting services - where your website is stored on a server for delivery to website visitors - and email services are provided under a contract between the client and the chosen hosting and email provider (Internet Service Provider (ISP)) and will be bound by the terms and conditions of that ISP.<br><br>
+
+Farm-mart makes no commission on such recommendations or services and in recommending an ISP does so in good faith and cannot under any circumstances be held responsible or liable for any shortcomings or losses incurred as part of that contract.<br><br>
+
+Data Protection<br>
+Where the operation of the website or other services provided by Farm-mart involves the collection and administration of personal data the client is deemed to be the Data Controller and as such is responsible for notification under the terms of the Data Protection Acts and related regulations.<br><br>
+
+Farm-mart can arrange the required notification and the current fee for Notification and time and other costs will be payable by the client.<br><br>
+
+The client shall indemnify Farm-mart against any actions, costs and liabilities arising from the use in good faith by Farm-mart of personal data provided by the client or through the client's website / promotional material.<br><br>
+
+Where Project involves e-commerce functionality, the client must ensure that suitable arrangements are in place to maximise security levels with regard to financial and personal information relating to the users of the website and other services. This may necessitate the use of secure electronic protocols, authentication certificates, encryption et cetera and may require the provision of secure server facilities and/or the use of a credit card clearing service.<br><br>
+Where a service is provided relating to e-commerce whereby visitors to the client's website can order goods or services through the website - whether through direct or indirect payment the client undertakes to ensure that all transactions are carried out legally and fairly, that the security of personal information and of financial information is maintained and that the collection and control of that data meets the requirements of the Data Protection Acts and regulations.<br><br>
+
+The client is solely responsible for complying with any laws, taxes, and tariffs applicable in any way to the website or any other services contemplated, and will hold harmless, protect, and defend Farm-mart and its sub-contractors from any claim, suit, penalty, tax, fine, or tariff arising from the website or other services provided.<br><br>
+
+Sub-Contracting<br>
+If necessary Farm-mart reserves the right, and the client hereby agrees, to allow the use of sub-contractors or agents to work on any aspect of the design or website.<br><br>
+
+Consequential Losses<br>
+If for any reason whatsoever Farm-mart is unable to provide an agreed product or service in accordance with these terms and conditions our liability shall be limited in its entirety to a proportional refund of any fees paid by you for the service or product. The entire risk as to the quality and performance of the website or other services is with the client. In no event will Farm-mart be liable to the client or any third party for any damages, including, but not limited to, service interruptions caused by acts of god, the hosting service or any other circumstances beyond the control of Farm-mart, any lost profits, lost savings or other incidental, consequential, punitive, or special damages arising out of the operation of or inability to operate the website or other services, failure of any service provider, of any telecommunications carrier, of the Internet backbone, of any Internet servers, your or your site visitors' computer or Internet software, even if Farm-mart has been advised of the possibility of such damages.<br><br>
+
+Quotations and Tenders<br>
+Tenders and Quotations are valid for thirty days from the date on the tender or quotation. All prices quoted may be subject to change after this period.<br><br>
+
+Advice and Consultancy<br<
+Any advice given in respect of software, hardware, programming, design, purchasing, hosting, training, upgrading, installing or any other advice, suggestion, recommendation or otherwise of any product or service provided by us or by a third party, whether introduced by us directly or indirectly is accepted by you as an opinion and as such you agree that prior to acting on any of the aforementioned that you will first obtain professional advice. You further agree to indemnify us of all liability with regard to any decision or action performed by you that may or may not be a direct or indirect result of any contact or dealing with us.<br><br>
+
+Our consultancy service and general advice is, by its nature, subjective. It is up to you whether you decide to follow our ideas and suggestions. It is not possible and we do not guarantee that any of those ideas and suggestions will increase traffic to your site, improve your ratings with search engines or boost sales.<br><br>
+
+Training <br>
+Endeavour to provide appropriate training as agreed and on terms agreed. The outcomes of training personnel in whatever activities agreed are not readily quantifiable and as such we cannot accept liability for any training we provide not meeting the client's or the trainee's expectations.<br><br>
+
+Right to Assign<br>
+This Agreement is personal to you and you may not assign it without our prior express written consent. Should you transfer ownership of the website as part of a transfer of ownership of a business then the new owners will need to come to a new agreement with Farm-mart.<br><br>
+
+Communication <br>
+Farm-mart's preferred method of communication is by email. Invoices and quotes will be sent by email and shall form a legal document just as if sent by traditional post.<br><br>
+
+The design process will be undertaken by telephone conferencing, sample Internet design publication on Farm-mart's website, file design submission on computer disk, or other method as appropriate to the client's particular circumstances.<br><br>
+
+Cancellation and Termination<br>
+Farm-mart may, by written notice, terminate the Agreement between us immediately upon the happening of any of the following events.<br>
+•	You fail to pay any invoice which has become due.<br>
+•	You commit a material breach of any of the terms of the Agreement between us.<br>
+•	You enter into or propose a voluntary arrangement or composition with your creditors or reconstruction of your debts or your directors make a declaration of solvency for the purpose of a members’ voluntary winding up, or if notice is given of a creditors’ meeting in connection with a creditors’ winding up, or if a special resolution is passed that you be wound up by the court, or if an administrative or other receiver is appointed, or if the court makes and administration order or order that you be wound up by the court, or if you cease to carry on business or are unable to pay your debts within the meaning of the Insolvency Act 1986 Section 123.<br><br>
+
+Should Farm-mart decide to terminate the Agreement between us immediately upon the occurrence of one of the above circumstances, we reserve the right to exercise any other rights which we may have against you.
+We reserve the right to remove from the Internet any website or other service which we display on your behalf upon the occurrence of one of the above circumstances.
+Should we terminate the Agreement upon the occurrence of one of the above circumstances, we will not refund to you any monies paid by you to us. If at any point during the development a client wishes to cancel, they may do so but will be invoiced up to the full amount quoted based on the degree to which the work has been completed and on the extent to which time has been allocated to the project that cannot be effectively used to generate revenue that would be otherwise lost.<br><br>
+
+If a maintenance agreement is terminated for any of the reasons mentioned above a fee equivalent to three months charges will be payable.<br><br>
+
+In the event that Farm-mart terminates a maintenance contract for any other reason, a refund equivalent to the unused portion of the current payment period will be the maximum liability.
+
+Waiver and Interpretation
+Should Farm-mart waive any of these terms on an individual basis, this shall not affect the validity of remaining clauses or commit Farm-mart to waive the same clause on any other occasion.<br><br>
+
+These terms and conditions shall prevail over all terms and conditions of your customary practice or any previous course of dealing between us and you. Any variation to these terms and conditions shall be inapplicable unless agreed between ourselves before we commence any work on your behalf.<br><br>
+
+Work, services or products are only supplied in strict accordance with these terms and conditions.
+The provision of work, services or products by us is only undertaken on the understanding that you have read and accept these terms and conditions in full.<br><br>
+
+By agreeing to these terms and conditions your statutory rights are not affected.<br><br>
+
+This contract shall be subject to English Law. In the event that Farm-mart is not entitled to rely on a term or terms in this contract, then Farm-mart may also be allowed to cancel all rights and obligations under this contract, or to hold all other clauses as valid entirely at their sole discretion.<br><br>
+
+No terms or conditions endorsed upon, delivered with or contained in the client's purchase order, confirmation of order, specification or other document will form part of the contract simply as a result of such document being referred to in the contract.<br><br>
+
+The client must ensure that the terms of its order and any applicable specification are complete and accurate.
+
+<p>Confidentiality. <br>
+In connection with the Client Order, each party may receive or have access to commercially or personally valuable technical and non-technical confidential or proprietary information ("Confidential Information") of the other party. Confidential Information includes all information, whether oral or written, relating to the business of a party that is not generally known or available to others, including, without limitation, source code and documentation for software, trade secrets, customer lists, pricing strategies, marketing and business plans, information concerning a party's vendors, and a party's contemplated plans, strategies and prospects. Each party acknowledges and agrees that any Confidential Information received or obtained from the other party will be the sole and exclusive property of the other party and may not be used, disseminated or disclosed except as may be necessary to perform the obligations required under this Agreement or as may be required by law. </p>
+
+    <p>Notice <br>
+Any notice, approval, request, authorisation, direction or other communication in connection with this Agreement and the Client (“Notice”) must be made to Farm-mart, by email to info@dwcreative.uk or by post to Farm-mart, 25 Rowan Place, Troon, Ayrshire, KA10 6QP. All Notice to Client by Farm-mart shall be deemed to have been delivered and given for all purposes if sent to the email address provided by Client on the Client Order, unless a different email address is provided in writing to Farm-mart. </p>
+
+<p>Relationship of the Parties<br>
+The relationship of the parties in connection with this Agreement and the Client Order is that of an independent contractor relationship, and no partnership, joint venture or employee/employer relationship is intended.</p>
+
+<p>Force Majeure<br>
+Neither party shall be deemed in default of this Agreement or the Client Order to the extent that performance of its obligations or attempts to cure any breach are delayed or prevented by reason of any act of God, fire, natural disaster, accident, riots, acts of government, or any other cause beyond the reasonable control of such party; provided, that the party whose performance is affected by any such event gives the other party written notice thereof within ten (10) business days of such event or occurrence.</p>
+
+<p>Miscellaneous<br>
+(a) In the event that any provision of this Agreement or the Client conflicts with the law under which this Agreement is to be construed, or if any such provision is held invalid by a court with jurisdiction over the parties to this Agreement, such provision shall be deemed to be restated to reflect as nearly as possible the original intentions of the parties in accordance with applicable law, and the remainder of this Agreement shall remain in full force and effect. (b) This Agreement may be modified by Farm-mart at any time by publication through its website (www.dwcreative.uk) or by sending each Client an email to the address listed on the Client Order, except that such changes shall not effect Client Orders that have already been accepted. (c) This Agreement and the Client Order may be executed in counterparts, each of which shall be deemed an original and both of which when taken together shall be deemed to constitute the same instrument.</p>
+</div>
+    </div>
+  
+  </section>
+    
+
+  
+<footer>
+  <div class="footer">
+  <div class="column">
+  <ul>
+  <li class="title">FARM-MART</li>
+  <li>Connects Mumbai with organic farmers across Maharashtra! <br>You will now be able to buy fresh, organically certified, fruits and vegetables directly from farmers.</li>
+  </ul>
+  </div>
+  
+  <div class="column">
+  <ul>
+  <li class="title">OTHER LINKS</li>
+  <li><a href="/terms">Terms & Conditions</a></li>
+  <li><a href="/privacy">Privacy Policy</a></li>
+  <li><a href="/cookies">Cookie Policy</a></li>
+  </ul>
+  </div>
+  
+  <div class="column">
+  <ul>
+  <li class="title">SHORT CUT</li>
+  <li><a href="/blog">Blog</a></li>
+  <li><a href="/products">Grocery Menu</a></li>
+  <li><a href="/">Home</a></li>
+  </ul>
+  </div>
+  
+  <div class="column">
+  <ul>
+    <li>Want to sell your farm products?</li>
+  <li class="title">CONTACT US</li>
+  <li>
+  <a href="/contact" title="Address,State,Country,Pincode"><i class="fa fa-map-marker"></i></a>
+  <a href="/contact"><i class="fa fa-phone"></i></a>
+  <a href="/contact"><i class="fa fa-envelope"></i></a>
+  </li>
+  </ul>
+  </div>
+  </div>
+  </footer>
+  
+  </body>
+</html>
